@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Creating and Removing Elements</title>
+</head>
+<body>
+
+    <button id="addBtn">Add Paragraph</button>
+    <button id="removeBtn">Remove Last Paragraph</button>
+
+    <div id="container"></div>
+
+    <script>
+        const container = document.getElementById("container");
+        const addBtn = document.getElementById("addBtn");
+        const removeBtn = document.getElementById("removeBtn");
+
+        // Add new paragraph
+        addBtn.addEventListener("click", function () {
+            const p = document.createElement("p"); // Create <p>
+            p.textContent = "This is a new paragraph."; // Set text
+            container.appendChild(p); // Add to div
+        });
+
+        // Remove last paragraph
+        removeBtn.addEventListener("click", function () {
+            if (container.lastChild) {  // Check if any paragraph exists
+                container.removeChild(container.lastChild); // Remove last <p>
+            }
+        });
+    </script>
+
+</body>
+</html>
